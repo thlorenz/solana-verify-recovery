@@ -5,7 +5,7 @@ using HD wallet derivation paths.
 
 ## Purpose
 
-This tool helps to verify recovery phrases usde to import Solana wallet accounts from a 24-word BIP39 mnemonic seed
+This tool helps to verify recovery phrases used to import Solana wallet accounts from a 24-word BIP39 mnemonic seed
 phrase by deriving the public keys for multiple account indices.
 
 It supports both **Ledger** and **standard wallet software** (Solflare, Phantom) derivation paths, allowing you to
