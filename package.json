@@ -5,7 +5,27 @@
   "license": "MIT",
   "author": "Thorsten Lorenz <thlorenz@gmx.de>",
   "type": "module",
-  "main": "main.js",
+  "main": "main.mjs",
+  "bin": {
+    "solana-verify-recovery": "main.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thlorenz/solana-verify-recovery.git"
+  },
+  "keywords": [
+    "solana",
+    "bip39",
+    "hd-wallet",
+    "recovery",
+    "verification",
+    "ledger",
+    "phantom",
+    "solflare"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "dependencies": {
     "@solana/web3.js": "^1.98.4",
     "bip39": "^3.1.0",

@@ -54,7 +54,6 @@ if (!fs.existsSync(PHRASE_FILE)) {
 const mnemonic = fs.readFileSync(PHRASE_FILE, "utf8").trim();
 
 if (!bip39.validateMnemonic(mnemonic)) {
-  installed;
   console.error("Invalid mnemonic");
   process.exit(1);
 }
