@@ -10,9 +10,39 @@ const isLedger = process.argv.includes("--ledger");
 const showHelp = process.argv.includes("--help") || process.argv.includes("-h");
 
 if (showHelp) {
-  console.log("Usage: ./main.mjs <phrase-file> [--ledger] [--help]");
-  console.log("  --ledger   Use Ledger Nano derivation path (m/44'/501'/i')");
-  console.log("             Default: Solflare path (m/44'/501'/i'/0')");
+  console.log(
+    "Solana HD Wallet Key Recovery Verification - Derive public keys from BIP39 seed phrases\n",
+  );
+  console.log("Usage: ./main.mjs <phrase-file> [--ledger] [--help]\n");
+  console.log("Description:");
+  console.log(
+    "  Derives 10 Solana public keys from a 24-word BIP39 recovery seed phrase",
+  );
+  console.log(
+    "  using HD wallet derivation. Supports both Ledger Nano and standard",
+  );
+  console.log("  software wallets (Solflare, Phantom).\n");
+  console.log("Arguments:");
+  console.log(
+    "  <phrase-file>  Path to text file containing your 24-word BIP39 mnemonic",
+  );
+  console.log("                 (one line, space-separated words)\n");
+  console.log("Options:");
+  console.log(
+    "  --ledger       Use Ledger Nano derivation path (m/44'/501'/i')",
+  );
+  console.log(
+    "                 Default: Solflare/Phantom path (m/44'/501'/i'/0')\n",
+  );
+  console.log("  --help, -h     Show this help message\n");
+  console.log("Examples:");
+  console.log("  ./main.mjs phrase.txt");
+  console.log("  ./main.mjs phrase.txt --ledger\n");
+  console.log("Phrase File Format:");
+  console.log(
+    "  Plain text file with a single line containing exactly 12 or 24 BIP39 words",
+  );
+  console.log("  separated by spaces.\n");
   process.exit(0);
 }
 
@@ -24,6 +54,7 @@ if (!fs.existsSync(PHRASE_FILE)) {
 const mnemonic = fs.readFileSync(PHRASE_FILE, "utf8").trim();
 
 if (!bip39.validateMnemonic(mnemonic)) {
+  installed;
   console.error("Invalid mnemonic");
   process.exit(1);
 }
