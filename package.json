@@ -1,14 +1,11 @@
 {
-  "name": "solana-offline-recover",
+  "name": "solana-verify-recovery",
   "version": "0.0.1",
-  "description": "CLI tool to recover keypairs from a recovery phrase entirely offline.",
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
+  "description": "CLI tool to verify recovery phrases entirely offline.",
+  "license": "MIT",
+  "author": "Thorsten Lorenz <thlorenz@gmx.de>",
+  "type": "module",
   "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "dependencies": {
     "@solana/web3.js": "^1.98.4",
     "bip39": "^3.1.0",
